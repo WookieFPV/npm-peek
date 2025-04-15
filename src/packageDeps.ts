@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import * as path from "node:path";
 import process from "node:process";
 
@@ -7,10 +8,14 @@ type PackageJson = {
 	peerDependencies?: Record<string, string>;
 };
 
-export const getPackageVersion = (packageName: string): string => {
-	const packageJson = require(
+export const getPackageVersion = async (
+	packageName: string,
+): Promise<string> => {
+	const packageJsonStr = await fs.readFile(
 		path.join(process.cwd(), "package.json"),
-	) as PackageJson;
+		"utf-8",
+	);
+	const packageJson: PackageJson = JSON.parse(packageJsonStr);
 	const {
 		dependencies = {},
 		devDependencies = {},
