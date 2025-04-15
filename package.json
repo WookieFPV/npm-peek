@@ -15,7 +15,6 @@
         "node": ">=22"
     },
     "scripts": {
-        "prebuild": "tsc -p src/tsconfig.json",
         "build": "tsup",
         "prepublishOnly": "npm run build"
     },
@@ -32,11 +31,11 @@
         "minify": true
     },
     "dependencies": {
-        "@stricli/core": "^1.1.2"
+        "@stricli/core": "1.1.2"
     },
     "devDependencies": {
-        "@types/node": "22.x",
-        "tsup": "^6.7.0",
-        "typescript": "5.6.x"
+        "@types/node": "22.14.1",
+        "tsup": "8.4.0",
+        "typescript": "5.8.3"
     }
 }
