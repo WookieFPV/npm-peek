@@ -1,41 +1,31 @@
 {
-    "name": "npm-peek",
-    "author": "",
-    "description": "Stricli command line application",
-    "license": "MIT",
-    "type": "module",
-    "version": "0.0.0",
-    "files": [
-        "dist"
-    ],
-    "bin": {
-        "npm-peek": "dist/cli.js"
-    },
-    "engines": {
-        "node": ">=22"
-    },
-    "scripts": {
-        "build": "tsup",
-        "prepublishOnly": "npm run build"
-    },
-    "tsup": {
-        "entry": [
-            "src/bin/cli.ts"
-        ],
-        "format": [
-            "esm"
-        ],
-        "tsconfig": "src/tsconfig.json",
-        "clean": true,
-        "splitting": true,
-        "minify": true
-    },
-    "dependencies": {
-        "@stricli/core": "1.1.2"
-    },
-    "devDependencies": {
-        "@types/node": "22.14.1",
-        "tsup": "8.4.0",
-        "typescript": "5.8.3"
-    }
+	"name": "npm-peek",
+
+	"description": "diff npm package with latest changes",
+	"license": "MIT",
+	"type": "module",
+	"version": "0.0.0",
+	"files": ["dist"],
+	"bin": {
+		"npm-peek": "dist/cli.js"
+	},
+	"keywords": ["npm", "diff", "viewer"],
+	"main": "dist/cli.js",
+	"scripts": {
+		"build": "tsup",
+		"build:dev": "tsup --watch --clean false",
+		"lint": "bunx biome check --fix",
+		"lint:CI": "bunx biome check",
+		"typecheck": "tsc",
+		"prepublishOnly": "bun i && bun run lint:CI && tsc  && bun run build"
+	},
+	"dependencies": {
+		"@stricli/core": "1.1.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "22.14.1",
+		"tsup": "8.4.0",
+		"typescript": "5.8.3"
+	}
 }
