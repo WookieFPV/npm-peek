@@ -4,7 +4,7 @@
 	"description": "diff npm package with latest changes",
 	"license": "MIT",
 	"type": "module",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"files": ["dist"],
 	"bin": {
 		"npm-peek": "dist/cli.js"
