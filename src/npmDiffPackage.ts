@@ -21,7 +21,6 @@ export const npmDiffPackage = async ({
 
 	const { error } = await tryCatch(fs.access(diffFile));
 	if (!error) {
-		console.log(`[npmDiffPackage] already exists: ${diffFile}`);
 		return diffFile;
 	}
 

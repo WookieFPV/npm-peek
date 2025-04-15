@@ -6,7 +6,7 @@ import { getPackageVersion } from "./packageDeps";
 export const openPackageDiff = async (packageName: string) => {
 	const version = await getPackageVersion(packageName);
 	const latest = await getLatestPackageVersion(packageName);
-	console.log(`diff ${packageName} ${version} -> ${latest}`);
+	console.log(`${packageName} ${version} -> ${latest}`);
 
 	const diffFile = await npmDiffPackage({ packageName, latest, version });
 
