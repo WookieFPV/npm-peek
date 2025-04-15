@@ -1,13 +1,12 @@
+import { openPackageDiff } from "../openPackageDiff";
 import type { LocalContext } from "./context";
 
-interface CommandFlags {
-	readonly count: number;
-}
+type CommandFlags = Record<string, never>;
 
 export default async function (
 	this: LocalContext,
 	flags: CommandFlags,
 	name: string,
 ): Promise<void> {
-	this.process.stdout.write(`Hello ${name}!\n`.repeat(flags.count));
+	await openPackageDiff(name);
 }

@@ -20,7 +20,8 @@
 		"prepublishOnly": "bun i && bun run lint:CI && tsc  && bun run build"
 	},
 	"dependencies": {
-		"@stricli/core": "1.1.2"
+		"@stricli/core": "1.1.2",
+		"zx": "8.5.2"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
