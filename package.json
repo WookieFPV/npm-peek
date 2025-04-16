@@ -1,10 +1,9 @@
 {
 	"name": "npm-peek",
-
 	"description": "diff npm package with latest changes",
 	"license": "MIT",
 	"type": "module",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"files": ["dist"],
 	"bin": {
 		"npm-peek": "dist/cli.js"
@@ -21,12 +20,13 @@
 		"prepublishOnly": "bun i && bun run lint:CI && tsc  && bun run build"
 	},
 	"dependencies": {
+		"@rnx-kit/tools-workspaces": "0.2.2",
 		"@stricli/core": "1.1.2",
 		"zx": "8.5.2"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/node": "22.14.1",
+		"@types/bun": "1.2.9",
 		"tsup": "8.4.0",
 		"typescript": "5.8.3"
 	}

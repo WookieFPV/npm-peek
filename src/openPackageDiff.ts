@@ -2,6 +2,7 @@ import { $ } from "zx";
 import { getLatestPackageVersion } from "./getLatestPackageVersion";
 import { npmDiffPackage } from "./npmDiffPackage";
 import { getPackageVersion } from "./packageDeps";
+import { printGithubLinks } from "./printGithubLinks";
 
 export const openPackageDiff = async (packageName: string) => {
 	const version = await getPackageVersion(packageName);
@@ -12,6 +13,7 @@ export const openPackageDiff = async (packageName: string) => {
 		);
 
 	console.log(`🔍 Comparing ${packageName}: v${version} → v${latest}`);
+	void printGithubLinks({ packageName, latest, version });
 
 	const diffFile = await npmDiffPackage({ packageName, latest, version });
 

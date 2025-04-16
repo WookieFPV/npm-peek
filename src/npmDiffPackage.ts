@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { $ } from "zx";
+import type { UpdateInfo } from "./UpdateInfo";
 import { createTempDir } from "./helper/tempDir";
 import { tryCatch } from "./helper/tryCatch";
 
@@ -8,11 +9,7 @@ export const npmDiffPackage = async ({
 	packageName,
 	latest,
 	version,
-}: {
-	packageName: string;
-	version: string;
-	latest: string;
-}) => {
+}: UpdateInfo) => {
 	const packageFileName = packageName.replace(/[/\\?%*:|"<>]/g, "_");
 
 	const tmpFolder = await createTempDir("npm-peek", "-diff-cache");

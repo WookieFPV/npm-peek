@@ -2,10 +2,14 @@ import fs from "node:fs/promises";
 import * as path from "node:path";
 import process from "node:process";
 
-type PackageJson = {
+export type PackageJson = {
 	dependencies?: Record<string, string>;
 	devDependencies?: Record<string, string>;
 	peerDependencies?: Record<string, string>;
+	repository?:
+		| { url?: string; type?: string; directory?: string; baseUrl?: string }
+		| string
+		| undefined;
 };
 
 export const getPackageVersion = async (
