@@ -13,10 +13,12 @@ export const npmDiffPackage = async ({
 	version: string;
 	latest: string;
 }) => {
+	const packageFileName = packageName.replace(/[/\\?%*:|"<>]/g, "_");
+
 	const tmpFolder = await createTempDir("npm-peek", "-diff-cache");
 	const diffFile = path.join(
 		tmpFolder,
-		`${packageName}_${version}_${latest}_diff.txt`,
+		`${packageFileName}_${version}->${latest}_diff.txt`,
 	);
 
 	const { error } = await tryCatch(fs.access(diffFile));
