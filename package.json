@@ -10,7 +10,10 @@
 	},
 	"keywords": ["npm", "diff", "viewer"],
 	"main": "dist/cli.js",
-	"repository": "https://github.com/WookieFPV/npm-peek",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/WookieFPV/npm-peek.git"
+	},
 	"scripts": {
 		"build": "tsup",
 		"build:dev": "tsup --watch --clean false",

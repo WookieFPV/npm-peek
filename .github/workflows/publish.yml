@@ -40,6 +40,6 @@ jobs:
         fi
 
     - name: Publish to npm
-      run: npm publish --access public --dry-run
+      run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
