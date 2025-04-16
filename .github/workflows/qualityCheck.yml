@@ -2,8 +2,8 @@ name: Quality Check
 
 on:
   push:
-    tags-ignore:
-    - "v*"
+    branches:
+    - "**"
   workflow_dispatch:
   workflow_call:
 
