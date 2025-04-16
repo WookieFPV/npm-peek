@@ -5,13 +5,10 @@ A powerful CLI tool to visualize differences between your current npm package ve
 [![npm version](https://img.shields.io/npm/v/npm-peek.svg)](https://www.npmjs.com/package/npm-peek)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## ✨ Features
 
-- **Easy Comparison:** Quickly diff any npm package in your `package.json` with its latest version
-- **Visual Diff:** Presents the differences in a user-friendly HTML format using `diff2html`
-- **Browser Output:** Automatically opens the diff in your default browser
-- **Simple CLI:** Intuitive command-line interface
-- **Zero Configuration:** Works out of the box with your existing `package.json`
+## 🎥 Showcase
+
+![Demo](assets/demo.gif)
 
 ## 🚀 Quick Start
 
@@ -26,6 +23,14 @@ For example, to compare the version of React in your project with the latest ver
 ```bash
 npx npm-peek react
 ```
+
+## ✨ Features
+
+- **Easy Comparison:** Quickly diff any npm package in your `package.json` with its latest version
+- **Visual Diff:** Presents the differences in a user-friendly HTML format using `diff2html`
+- **Browser Output:** Automatically opens the diff in your default browser
+- **Simple CLI:** Intuitive command-line interface
+- **Zero Configuration:** Works out of the box with your existing `package.json`
 
 ## 📦 Installation (Optional)
 
