@@ -4,7 +4,7 @@
     "": {
       "name": "npm-peek",
       "dependencies": {
-        "@rnx-kit/tools-workspaces": "^0.2.2",
+        "@rnx-kit/tools-workspaces": "0.2.2",
         "@stricli/core": "1.1.2",
         "zx": "8.5.2",
       },
