@@ -6,7 +6,7 @@
       "dependencies": {
         "@rnx-kit/tools-workspaces": "0.2.2",
         "@stricli/core": "1.1.2",
-        "zx": "8.5.2",
+        "zx": "8.5.3",
       },
       "devDependencies": {
         "@biomejs/biome": "1.9.4",
@@ -349,7 +349,7 @@
 
     "yocto-queue": ["yocto-queue@0.1.0", "", {}, "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="],
 
-    "zx": ["zx@8.5.2", "", { "bin": { "zx": "build/cli.js" } }, "sha512-eIxjTkCtlzvDNRhw3RD1gGBPA4nxOTn6PafpKl+MW4eE2jR/u/R6mqq7oyUCXwarM5DSP96kWtq6XkrL2kSFrg=="],
+    "zx": ["zx@8.5.3", "", { "bin": { "zx": "build/cli.js" } }, "sha512-TsGLAt8Ngr4wDXLZmN9BT+6FWVLFbqdQ0qpXkV3tIfH7F+MgN/WUeSY7W4nNqAntjWunmnRaznpyxtJRPhCbUQ=="],
 
     "micromatch/picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
 
