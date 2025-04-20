@@ -11,7 +11,7 @@ export const getUpToCompareMessage = ({
 	used,
 	latest,
 }: { packageName: string; wanted: string; used: string; latest: string }) =>
-	`🔍 Comparing ${packageName}: ${getVersionString({ wanted, used })} → v${latest}`;
+	`🔍 Comparing ${packageName}: ${getVersionString({ wanted, used })} → v{latest}`;
 
 export const getVersionString = ({
 	wanted,

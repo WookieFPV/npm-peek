@@ -21,6 +21,6 @@ export const openPackageDiff = async (packageName: string) => {
 
 	const diffFile = await npmDiffPackage({ packageName, latest, version: used });
 
-	const title = `npm-peek: ${packageName} ${getVersionString({ used, wanted })} → v${latest}`;
+	const title = `npm-peek: ${packageName} ${getVersionString({ used, wanted })} → ${latest}`;
 	await $`npx -y diff2html-cli --cs light -s side -t ${title} -i file -- ${diffFile}`;
 };
