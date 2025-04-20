@@ -1,8 +1,9 @@
-import fs from "node:fs/promises";
-import * as path from "node:path";
 import process from "node:process";
+import { getPackageJsonDeps } from "./getPackageJsonDeps";
+import { readPackageJson } from "./readPackageJson";
 
 export type PackageJson = {
+	version: string;
 	dependencies?: Record<string, string>;
 	devDependencies?: Record<string, string>;
 	peerDependencies?: Record<string, string>;
@@ -14,28 +15,22 @@ export type PackageJson = {
 
 export const getPackageVersion = async (
 	packageName: string,
-): Promise<string> => {
-	const packageJsonStr = await fs.readFile(
-		path.join(process.cwd(), "package.json"),
-		"utf-8",
-	);
-	const packageJson: PackageJson = JSON.parse(packageJsonStr);
-	const {
-		dependencies = {},
-		devDependencies = {},
-		peerDependencies = {},
-	} = packageJson;
+): Promise<{ wanted: string; used: string }> => {
+	const deps = await getPackageJsonDeps();
 
-	const deps = {
-		...dependencies,
-		...devDependencies,
-		...peerDependencies,
-	} as Record<string, string>;
-
-	const version = deps[packageName];
-	if (!version) {
+	const packageJson = await readPackageJson(packageName);
+	if (!packageJson) {
+		console.log(
+			`Unable to find package.json of ${packageName} (install packages first)`,
+		);
+		process.exit(1);
+	}
+	const versionRange = deps[packageName];
+	if (!versionRange) {
 		console.log(`Unable to find "${packageName}" in package.json deps`);
 		process.exit(1);
 	}
-	return version;
+	const usedVersion = packageJson.version;
+
+	return { wanted: versionRange, used: usedVersion };
 };

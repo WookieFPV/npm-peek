@@ -1,5 +1,9 @@
 import { buildApplication, buildCommand } from "@stricli/core";
 import { description, name, version } from "../../package.json";
+import {
+	PROMPT_EMPTY,
+	parsePackageNameOrPrompt,
+} from "../parsePackageNameOrPrompt";
 
 const command = buildCommand({
 	loader: async () => import("./impl"),
@@ -9,7 +13,8 @@ const command = buildCommand({
 			parameters: [
 				{
 					brief: "package name",
-					parse: String,
+					parse: parsePackageNameOrPrompt,
+					default: PROMPT_EMPTY,
 				},
 			],
 		},
