@@ -5,50 +5,56 @@ A powerful CLI tool to visualize differences between your current npm package ve
 [![npm version](https://img.shields.io/npm/v/npm-peek.svg)](https://www.npmjs.com/package/npm-peek)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 ## 🎥 Showcase
 
 ![Demo](assets/demo.gif)
 
 ## 🚀 Quick Start
 
-The easiest way to use npm-peek is with npx:
+Use npm-peek instantly with npx:
 
 ```bash
-npx npm-peek <package-name>
-```
+# Interactive mode with autocompletion for your package.json dependencies
+npx npm-peek
 
-For example, to compare the version of React in your project with the latest version:
-
-```bash
+# Direct comparison mode with specific package
 npx npm-peek react
 ```
 
-## ✨ Features
+## 🧠 Usage Modes
 
-- **Easy Comparison:** Quickly diff any npm package in your `package.json` with its latest version
-- **Visual Diff:** Presents the differences in a user-friendly HTML format using `diff2html`
-- **Browser Output:** Automatically opens the diff in your default browser
-- **Simple CLI:** Intuitive command-line interface
-- **Zero Configuration:** Works out of the box with your existing `package.json`
+- **Interactive Mode:** Run without arguments to select from your project dependencies with fuzzy search
+- **Direct Mode:** Specify a package name to instantly compare with its latest version
 
-## 📦 Installation (Optional)
+## ✨ Key Features
 
-If you prefer to install npm-peek globally:
+- **Smart Dependency Detection:** Automatically finds and lists all packages from your `package.json`
+- **Fuzzy Search:** Quickly locate packages with partial name matching
+- **Visual Diff Viewer:** See all changes in a clean, browser-based HTML interface
+- **One-Command Operation:** Compare versions with minimal typing
+- **Zero Configuration:** Works out-of-the-box with any npm project
+
+## 📦 Installation
+
+**Global Installation (Optional):**
 
 ```bash
 npm install -g npm-peek
+# or
+yarn global add npm-peek
+# or 
+pnpm add -g npm-peek
 ```
 
-Then you can use it directly:
+Then use anywhere:
 
 ```bash
-npm-peek <package-name>
+npm-peek [package-name]
 ```
 
 ## 🔧 How It Works
 
 1. Reads the version of the specified package from your `package.json`
 2. Fetches the latest version of the package from the npm registry
-3. Generates a diff file comparing the two versions
+3. Generates a visual diff
 4. Opens the diff in your default browser
