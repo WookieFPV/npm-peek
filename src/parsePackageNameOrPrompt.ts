@@ -1,5 +1,5 @@
 import { search } from "@inquirer/prompts";
-import { search as fzSearch } from "fast-fuzzy";
+import { fuzzySearch } from "./FuzzySearch";
 import { getPackageJsonDeps } from "./getPackageJsonDeps";
 import { tryCatch } from "./helper/tryCatch";
 
@@ -15,8 +15,8 @@ export const parsePackageNameOrPrompt = async (_input: string) => {
 	const { data } = await tryCatch(
 		search({
 			message: "npm package to check",
-			source: (term = "") =>
-				fzSearch(term, packageList).map((pkg) => ({
+			source: (term) =>
+				fuzzySearch(packageList, term).map((pkg) => ({
 					value: pkg,
 					name: pkg,
 				})),
@@ -24,5 +24,5 @@ export const parsePackageNameOrPrompt = async (_input: string) => {
 	);
 	if (data) return data;
 	console.log("❌ No package name selected.");
-	process.exit(1);
+	process.exit(0);
 };
