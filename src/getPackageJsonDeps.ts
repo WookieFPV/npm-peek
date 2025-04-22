@@ -1,13 +1,17 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { tryCatch } from "./helper/tryCatch";
 import type { PackageJson } from "./packageDeps";
 
 export const getPackageJsonDeps = async (): Promise<Record<string, string>> => {
-	const packageJsonStr = await fs.readFile(
-		path.join(process.cwd(), "package.json"),
-		"utf-8",
+	const { data: packageJsonStr, error } = await tryCatch(
+		fs.readFile(path.join(process.cwd(), "package.json"), "utf-8"),
 	);
+	if (error) {
+		console.log("❌  Unable to find package.json in current directory");
+		process.exit(1);
+	}
 	const packageJson: PackageJson = JSON.parse(packageJsonStr);
 	const {
 		dependencies = {},
