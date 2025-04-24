@@ -5,7 +5,9 @@ export const getPackageUrl = (repo: PackageJson["repository"]) => {
 	if (!rawUrl) return undefined;
 	return cleanUpUrl(rawUrl);
 };
-const getRepoUrl = (repo: PackageJson["repository"]): string | undefined => {
+export const getRepoUrl = (
+	repo: PackageJson["repository"],
+): string | undefined => {
 	if (!repo) return undefined;
 	if (typeof repo === "string") return repo;
 	if (typeof repo === "object") return repo.url;
@@ -14,13 +16,17 @@ const getRepoUrl = (repo: PackageJson["repository"]): string | undefined => {
 const cleanUpUrl = (_url: string): string => {
 	const url = _url
 		.replace(/^git\+/, "")
-		.replace(/^ssh:\/\//, "")
+		.replace(/^(\+)?ssh:\/\//, "")
 		.replace(/^git:\/\//, "")
 		.replace(/^git@/, "")
 		.replace(/^http:\/\//, "")
 		.replace("www.", "")
-		.replace(/\.git$/, "");
-	if (!url.includes("github.com/")) return `https://github.com/${_url}`;
+		.replace(/^github.com:/, "")
+		.replace(/\.git$/, "")
+		.replace(/\/$/, "");
+
+	if (!url.includes("github.com/") && !url.includes(".com/"))
+		return `https://github.com/${url}`;
 	if (url.startsWith("https://")) return url;
 	return `https://${url}`;
 };
