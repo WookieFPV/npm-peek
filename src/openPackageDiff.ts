@@ -7,7 +7,7 @@ import {
 	getVersionString,
 } from "./outputStrings";
 import { getPackageVersion } from "./packageDeps";
-import { printGithubLinks } from "./printGithubLinks";
+import { printRepoLinks } from "./printRepoLinks";
 
 export const openPackageDiff = async (packageName: string) => {
 	const { wanted, used } = await getPackageVersion(packageName);
@@ -17,7 +17,7 @@ export const openPackageDiff = async (packageName: string) => {
 
 	console.log(getUpToCompareMessage({ packageName, used, wanted, latest }));
 
-	void printGithubLinks({ packageName, latest, version: used });
+	void printRepoLinks({ packageName, latest, version: used });
 
 	const diffFile = await npmDiffPackage({ packageName, latest, version: used });
 
