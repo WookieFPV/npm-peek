@@ -21,7 +21,7 @@ export const getPackageVersion = async (
 	const packageJson = await readPackageJson(packageName);
 	if (!packageJson) {
 		console.log(
-			`Unable to find package.json of ${packageName} (install packages first)`,
+			`❌  "${packageName}" not found in node_modules. Please install packages first.`,
 		);
 		process.exit(1);
 	}

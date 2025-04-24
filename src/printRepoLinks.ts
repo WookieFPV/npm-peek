@@ -10,7 +10,9 @@ export const printRepoLinks = async ({
 }: UpdateInfo): Promise<void> => {
 	const packageJson = await readPackageJson(packageName);
 	if (!packageJson) {
-		console.error(`Package "${packageName}" not found on filesystem`);
+		console.error(
+			`❌  "${packageName}" not found in node_modules. Please install packages first.`,
+		);
 		return;
 	}
 
@@ -29,7 +31,5 @@ export const printRepoLinks = async ({
 		console.log(
 			`Bitbucket diff link: ${url}/compare/diff?sourceBranch=refs%2Ftags%2Fv${latest}&targetBranch=refs%2Ftags%2Fv${version}`,
 		);
-	} else {
-		console.log(`Unknown repo type: ${type ?? "unknown"}`);
 	}
 };

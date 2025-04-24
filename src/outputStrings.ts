@@ -3,7 +3,7 @@ export const getUpToDateMessage = ({
 	wanted,
 	used,
 }: { packageName: string; wanted: string; used: string }) =>
-	`✅ ${packageName} is already up to date (${getVersionString({ used, wanted })})`;
+	`✅ ${packageName} is already up to date: ${getVersionString({ used, wanted })}`;
 
 export const getUpToCompareMessage = ({
 	packageName,
@@ -11,7 +11,7 @@ export const getUpToCompareMessage = ({
 	used,
 	latest,
 }: { packageName: string; wanted: string; used: string; latest: string }) =>
-	`🔍 Comparing ${packageName}: ${getVersionString({ wanted, used })} → v${latest}`;
+	`🔍 Comparing ${packageName}: ${getVersionString({ wanted, used })} → ${latest}`;
 
 export const getVersionString = ({
 	wanted,
