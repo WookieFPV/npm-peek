@@ -33,6 +33,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "1.2.10",
+		"lefthook": "1.11.11",
 		"tsup": "8.4.0",
 		"typescript": "5.8.3"
 	}
