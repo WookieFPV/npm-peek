@@ -15,6 +15,7 @@ const command = buildCommand({
 					brief: "package name",
 					parse: parsePackageNameOrPrompt,
 					default: PROMPT_EMPTY,
+					placeholder: "example-package",
 				},
 			],
 		},
