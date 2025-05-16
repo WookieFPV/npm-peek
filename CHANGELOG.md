@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.12](https://github.com/WookieFPV/npm-peek/compare/v0.0.11...v0.0.12) (2025-05-16)
+
+
+### Bug Fixes
+
+* improve  placeholder of package-name in --help command ([4c277e0](https://github.com/WookieFPV/npm-peek/commit/4c277e0f7df915fb0250d65d63d02a597096f578))
+* improve user facing texts ([a762d4d](https://github.com/WookieFPV/npm-peek/commit/a762d4d79d561d261b24bb71cb20d5ce4160455a))
+* update dependency @inquirer/prompts to v7.5.0 ([#13](https://github.com/WookieFPV/npm-peek/issues/13)) ([776373d](https://github.com/WookieFPV/npm-peek/commit/776373d4db29f7c94993c4718eebdda222dd645e))
+
 ## [0.0.11](https://github.com/WookieFPV/npm-peek/compare/v0.0.10...v0.0.11) (2025-04-24)
 
 
