@@ -30,7 +30,7 @@
 		"prepublishOnly": "bun i && bun run lint:CI && tsc  && bun run build"
 	},
 	"dependencies": {
-		"@inquirer/prompts": "7.5.0",
+		"@inquirer/prompts": "7.5.1",
 		"@rnx-kit/tools-workspaces": "0.2.2",
 		"@stricli/core": "1.1.2",
 		"fast-fuzzy": "1.12.0",
