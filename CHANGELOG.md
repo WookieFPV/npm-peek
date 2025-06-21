@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.0.13](https://github.com/WookieFPV/npm-peek/compare/v0.0.12...v0.0.13) (2025-06-21)
+
+
+### Bug Fixes
+
+* update dependency @inquirer/prompts to v7.5.1 ([#19](https://github.com/WookieFPV/npm-peek/issues/19)) ([f3845ab](https://github.com/WookieFPV/npm-peek/commit/f3845abbce851209f3fb89efa23cfeb840a02199))
+* update dependency @inquirer/prompts to v7.5.3 ([#25](https://github.com/WookieFPV/npm-peek/issues/25)) ([85b27eb](https://github.com/WookieFPV/npm-peek/commit/85b27eb574f8fc4c415982c3f3ce790e15012655))
+* update dependency zx to v8.5.4 ([#20](https://github.com/WookieFPV/npm-peek/issues/20)) ([8b63270](https://github.com/WookieFPV/npm-peek/commit/8b63270b09f58cda0a467d420b4cd36b48b15a51))
+* update dependency zx to v8.5.5 ([#27](https://github.com/WookieFPV/npm-peek/issues/27)) ([bd16b45](https://github.com/WookieFPV/npm-peek/commit/bd16b45b69416d5e2d3a8c8afe336b3a0f48e58a))
+
 ## [0.0.12](https://github.com/WookieFPV/npm-peek/compare/v0.0.11...v0.0.12) (2025-05-16)
 
 
