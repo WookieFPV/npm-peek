@@ -8,7 +8,7 @@
         "@rnx-kit/tools-workspaces": "0.2.2",
         "@stricli/core": "1.1.2",
         "fast-fuzzy": "1.12.0",
-        "zx": "8.5.5",
+        "zx": "8.6.0",
       },
       "devDependencies": {
         "@biomejs/biome": "1.9.4",
@@ -450,7 +450,7 @@
 
     "yoctocolors-cjs": ["yoctocolors-cjs@2.1.2", "", {}, "sha512-cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA=="],
 
-    "zx": ["zx@8.5.5", "", { "bin": { "zx": "build/cli.js" } }, "sha512-kzkjV3uqyEthw1IBDbA7Co2djji77vCP1DRvt58aYSMwiX4nyvAkFE8OBSEsOUbDJAst0Yo4asNvMTGG5HGPXA=="],
+    "zx": ["zx@8.6.0", "", { "bin": { "zx": "build/cli.js" } }, "sha512-CpOskNj7nNW19z5DkOTHX24Yh1qnnx1oANn8EnD3QbCUBnZpuennJaYkb4zea5GJCxT6/IdxeiA5nweQ1S2YtA=="],
 
     "@isaacs/cliui/string-width": ["string-width@5.1.2", "", { "dependencies": { "eastasianwidth": "^0.2.0", "emoji-regex": "^9.2.2", "strip-ansi": "^7.0.1" } }, "sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA=="],
 
