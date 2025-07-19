@@ -34,7 +34,7 @@
 		"@rnx-kit/tools-workspaces": "0.2.3",
 		"@stricli/core": "1.1.2",
 		"fast-fuzzy": "1.12.0",
-		"zx": "8.6.2"
+		"zx": "8.7.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
