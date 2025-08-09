@@ -6,7 +6,7 @@
       "dependencies": {
         "@inquirer/prompts": "7.8.0",
         "@rnx-kit/tools-workspaces": "0.2.3",
-        "@stricli/core": "1.1.2",
+        "@stricli/core": "1.2.0",
         "fast-fuzzy": "1.12.0",
         "zx": "8.8.0",
       },
@@ -178,7 +178,7 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.40.0", "", { "os": "win32", "cpu": "x64" }, "sha512-lpPE1cLfP5oPzVjKMx10pgBmKELQnFJXHgvtHCtuJWOv8MxqdEIMNtgHgBFf7Ea2/7EuVwa9fodWUfXAlXZLZQ=="],
 
-    "@stricli/core": ["@stricli/core@1.1.2", "", {}, "sha512-/yWSoHUxo9mF8rgUyZkJgdrAoyIiOOhez1jo9vHTUJa8HTZYhioQUXtQU+rhi52m/hnV9Z2VGC2ap3OTH4NvUg=="],
+    "@stricli/core": ["@stricli/core@1.2.0", "", {}, "sha512-5b+npntDY0TAB7wAw0daGlh3/R2sf0TDLyrB1By2jCNH+C+lmcSqMtJXOMLVtEGSkIOvqAgIWpLMSs1PXqzt3w=="],
 
     "@types/bun": ["@types/bun@1.2.19", "", { "dependencies": { "bun-types": "1.2.19" } }, "sha512-d9ZCmrH3CJ2uYKXQIUuZ/pUnTqIvLDS0SK7pFmbx8ma+ziH/FRMoAq5bYpRG7y+w1gl+HgyNZbtqgMq4W4e2Lg=="],
 
