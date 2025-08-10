@@ -37,7 +37,7 @@
 		"zx": "8.8.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.1.4",
 		"@types/bun": "1.2.19",
 		"lefthook": "1.12.2",
 		"tsup": "8.5.0",
