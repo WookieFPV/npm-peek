@@ -1,9 +1,7 @@
-# npm-peek 🔍
+# npm-peek 🔍 [![npm][npm-image]][npm-url] ![npm][npm-dl-stats]
 
 A powerful CLI tool to visualize differences between your current npm package versions and their latest releases in a browser.
 
-[![npm version](https://img.shields.io/npm/v/npm-peek.svg)](https://www.npmjs.com/package/npm-peek)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎥 Showcase
 
@@ -58,3 +56,7 @@ npm-peek [package-name]
 2. Fetches the latest version of the package from the npm registry
 3. Generates a visual diff
 4. Opens the diff in your default browser
+
+[npm-image]: https://img.shields.io/npm/v/npm-peek
+[npm-url]: https://www.npmjs.com/package/npm-peek
+[npm-dl-stats]: https://img.shields.io/npm/dm/npm-peek
