@@ -14,7 +14,7 @@ export const readPackageJson = async (
 		try {
 			const content = await fs.readFile(packagePath, "utf-8");
 			return JSON.parse(content) as PackageJson;
-		} catch (error) {
+		} catch (_error) {
 			// File doesn't exist or cannot be read, continue to the next path
 		}
 	}
