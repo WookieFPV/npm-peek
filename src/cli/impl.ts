@@ -5,7 +5,7 @@ type CommandFlags = Record<string, never>;
 
 export default async function (
 	this: LocalContext,
-	flags: CommandFlags,
+	_flags: CommandFlags,
 	name: string,
 ): Promise<void> {
 	await openPackageDiff(name);

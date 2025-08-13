@@ -1,7 +1,7 @@
-import type { UpdateInfo } from "./UpdateInfo";
 import { getPackageUrl } from "./getPackageUrl/getPackageUrl";
 import { getRepoType } from "./getPackageUrl/getRepoType";
 import { readPackageJson } from "./readPackageJson";
+import type { UpdateInfo } from "./UpdateInfo";
 
 export const printRepoLinks = async ({
 	packageName,

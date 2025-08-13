@@ -1,9 +1,9 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { $ } from "zx";
-import type { UpdateInfo } from "./UpdateInfo";
 import { createTempDir } from "./helper/tempDir";
 import { tryCatch } from "./helper/tryCatch";
+import type { UpdateInfo } from "./UpdateInfo";
 
 export const npmDiffPackage = async ({
 	packageName,

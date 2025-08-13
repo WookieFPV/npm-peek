@@ -2,8 +2,8 @@ import { describe, expect, it } from "bun:test";
 import { getPackageUrl } from "./getPackageUrl";
 import { getRepoType } from "./getRepoType";
 import {
-	type PackageTestData,
 	invalidTestData,
+	type PackageTestData,
 	validTestData,
 	validTestData2,
 } from "./packageTestData";
@@ -12,7 +12,7 @@ describe("getPackageUrl", () => {
 	it.each(validTestData)(
 		"return url for %o",
 		(
-			packageName: PackageTestData[0],
+			_packageName: PackageTestData[0],
 			input: PackageTestData[1],
 			expectedData: PackageTestData[2],
 		) => {
@@ -30,7 +30,7 @@ describe("getPackageUrl", () => {
 	it.each(validTestData2)(
 		"return url for %o",
 		(
-			packageName: PackageTestData[0],
+			_packageName: PackageTestData[0],
 			input: PackageTestData[1],
 			expectedData: PackageTestData[2],
 		) => {
@@ -48,9 +48,9 @@ describe("getPackageUrl", () => {
 	it.each(invalidTestData)(
 		"return undefined for invalid packages or without url for %o",
 		(
-			packageName: PackageTestData[0],
+			_packageName: PackageTestData[0],
 			input: PackageTestData[1],
-			expectedUrl: PackageTestData[2],
+			_expectedUrl: PackageTestData[2],
 		) => {
 			const pkgUrl = getPackageUrl(input);
 
