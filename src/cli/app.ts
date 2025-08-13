@@ -8,6 +8,7 @@ import {
 const command = buildCommand({
 	loader: async () => import("./impl"),
 	parameters: {
+		flags: {}, // No flags but types fails if this is not defined
 		positional: {
 			kind: "tuple",
 			parameters: [
