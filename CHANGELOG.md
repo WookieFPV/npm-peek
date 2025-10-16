@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.1.0](https://github.com/WookieFPV/npm-peek/compare/v0.0.13...v0.1.0) (2025-10-16)
+
+
+### Features
+
+* prompt target version using autocomplete by default (instead of always latest), add --target tp select custom target version ([ad97cf1](https://github.com/WookieFPV/npm-peek/commit/ad97cf1c4eab14937c2d24854a43b5e426002fe3))
+
+
+### Bug Fixes
+
+* update dependency @inquirer/prompts to v7.8.1 ([#53](https://github.com/WookieFPV/npm-peek/issues/53)) ([cf8eb8b](https://github.com/WookieFPV/npm-peek/commit/cf8eb8b95f1be317b7f61a5ab933967be334147e))
+* update dependency @inquirer/prompts to v7.8.2 ([#57](https://github.com/WookieFPV/npm-peek/issues/57)) ([fb215f5](https://github.com/WookieFPV/npm-peek/commit/fb215f5b0398e335f37b908d34a13380428e8ded))
+* update dependency @inquirer/prompts to v7.8.3 ([#58](https://github.com/WookieFPV/npm-peek/issues/58)) ([4125914](https://github.com/WookieFPV/npm-peek/commit/412591496195cc49a4756dd84cef0a22c8b508be))
+* update dependency @inquirer/prompts to v7.8.4 ([#62](https://github.com/WookieFPV/npm-peek/issues/62)) ([2e4cfc5](https://github.com/WookieFPV/npm-peek/commit/2e4cfc56a021b6433a8f9fb35b4b27a2e32679be))
+* update dependency @inquirer/prompts to v7.8.6 ([#67](https://github.com/WookieFPV/npm-peek/issues/67)) ([ccf4d41](https://github.com/WookieFPV/npm-peek/commit/ccf4d411b60ffaa8da3d7accc33ab1fa75917267))
+* update dependency zx to v8.8.1 ([#59](https://github.com/WookieFPV/npm-peek/issues/59)) ([4c688b6](https://github.com/WookieFPV/npm-peek/commit/4c688b66549d6c600625121b66211dcf5af7af87))
+* update dependency zx to v8.8.3 ([#70](https://github.com/WookieFPV/npm-peek/issues/70)) ([88adf31](https://github.com/WookieFPV/npm-peek/commit/88adf310e38cd4364584f459999bcc45ab51264a))
+* update dependency zx to v8.8.4 ([#74](https://github.com/WookieFPV/npm-peek/issues/74)) ([a2cf277](https://github.com/WookieFPV/npm-peek/commit/a2cf2776b384beffb15447d701db67504eebe917))
+
 ## [0.0.13](https://github.com/WookieFPV/npm-peek/compare/v0.0.12...v0.0.13) (2025-08-13)
 
 
