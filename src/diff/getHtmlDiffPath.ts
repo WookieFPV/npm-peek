@@ -1,7 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { ColorSchemeType } from "diff2html/lib/types";
-import { getOutput } from "diff2html-cli/lib/cli";
+import { getOutput } from "diff2html-cli/lib/cli.js";
 import { tryCatch } from "../helper/tryCatch";
 
 export const getHtmlDiffPath = async (
@@ -16,9 +15,11 @@ export const getHtmlDiffPath = async (
 	if (!error) return htmldiffFile;
 
 	const diffString = await fs.readFile(diffTxtFilePath, "utf-8");
+
 	const fullHtml = getOutput(
 		{
-			colorScheme: ColorSchemeType.LIGHT,
+			// @ts-expect-error I am not going to import their ts enums just for this
+			colorScheme: "light",
 			outputFormat: "side-by-side",
 			drawFileList: true,
 		},
