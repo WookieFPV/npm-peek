@@ -3,7 +3,7 @@
 	"description": "Interactively compare npm packages to see what has changed",
 	"license": "MIT",
 	"type": "module",
-	"version": "0.0.13",
+	"version": "0.1.0",
 	"files": [
 		"dist"
 	],
