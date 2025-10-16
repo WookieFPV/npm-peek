@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/WookieFPV/npm-peek/compare/v0.1.1...v0.1.2) (2025-10-16)
+
+
+### Bug Fixes
+
+* fix crash if __dirname is not available ([dc8061f](https://github.com/WookieFPV/npm-peek/commit/dc8061f915624b840794cfceb10d89cb9b7b9e5a))
+
 ## [0.1.1](https://github.com/WookieFPV/npm-peek/compare/v0.1.0...v0.1.1) (2025-10-16)
 
 
