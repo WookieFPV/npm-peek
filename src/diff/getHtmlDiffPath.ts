@@ -1,7 +1,10 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { getOutput } from "diff2html-cli/lib/cli.js";
 import { tryCatch } from "../helper/tryCatch";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const getHtmlDiffPath = async (
 	diffTxtFilePath: string,
