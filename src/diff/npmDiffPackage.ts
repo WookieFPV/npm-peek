@@ -17,9 +17,7 @@ export const npmDiffPackage = async ({
 		`${packageFileName}_${version}__${target}_diff.txt`,
 	);
 	const { error } = await tryCatch(fs.access(diffFile));
-	if (!error) {
-		return diffFile;
-	}
+	if (!error) return diffFile;
 
 	const args = [
 		"diff",

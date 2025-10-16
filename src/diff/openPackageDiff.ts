@@ -1,10 +1,11 @@
+import open from "open";
 import {
 	getUpToCompareMessage,
 	getUpToDateMessage,
 	getVersionString,
 } from "../outputStrings";
 import { printRepoLinks } from "../printRepoLinks";
-import { runScript } from "../runScript";
+import { getHtmlDiffPath } from "./getHtmlDiffPath";
 import { npmDiffPackage } from "./npmDiffPackage";
 
 export const openPackageDiff = async ({
@@ -29,14 +30,13 @@ export const openPackageDiff = async ({
 
 	void printRepoLinks({ packageName: packageName, target, version: used });
 
-	const diffFile = await npmDiffPackage({
+	const diffTxtFilePath = await npmDiffPackage({
 		packageName: packageName,
 		target,
 		version: used,
 	});
 
 	const title = `npm-peek: ${packageName} ${getVersionString({ used, wanted })} → ${target}`;
-	await runScript(
-		`npx -y diff2html-cli --cs light -s side -t "${title}" -i file -- ${diffFile}`,
-	);
+	const htmlDiffFilePath = await getHtmlDiffPath(diffTxtFilePath, title);
+	await open(htmlDiffFilePath);
 };
