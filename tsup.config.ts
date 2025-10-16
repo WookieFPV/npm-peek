@@ -5,5 +5,5 @@ export default defineConfig({
 	format: ["esm"],
 	clean: true,
 	splitting: false,
-	minify: true,
+	minify: false,
 });

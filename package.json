@@ -5,7 +5,8 @@
 	"type": "module",
 	"version": "0.1.2",
 	"files": [
-		"dist"
+		"dist",
+		"template.html"
 	],
 	"bin": {
 		"npm-peek": "dist/cli.js"
