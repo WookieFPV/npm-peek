@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/WookieFPV/npm-peek/compare/v0.1.2...v0.1.3) (2025-10-16)
+
+
+### Bug Fixes
+
+* fix another crash by publishing template.html to npm ([389d237](https://github.com/WookieFPV/npm-peek/commit/389d2370985249a475fa4103b020a5c69c648f48))
+
 ## [0.1.2](https://github.com/WookieFPV/npm-peek/compare/v0.1.1...v0.1.2) (2025-10-16)
 
 
