@@ -1,6 +1,6 @@
 {
 	"name": "npm-peek",
-	"description": "diff npm package with latest changes",
+	"description": "Interactively compare npm packages to see what has changed",
 	"license": "MIT",
 	"type": "module",
 	"version": "0.0.13",

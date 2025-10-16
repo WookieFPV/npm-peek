@@ -1,6 +1,6 @@
 import process from "node:process";
 import { getPackageJsonDeps } from "./getPackageJsonDeps";
-import { readPackageJson } from "./readPackageJson";
+import { readDependencyPackageJson } from "./readDependencyPackageJson";
 
 export type PackageJson = {
 	version: string;
@@ -18,10 +18,10 @@ export const getPackageVersion = async (
 ): Promise<{ wanted: string; used: string }> => {
 	const deps = await getPackageJsonDeps();
 
-	const packageJson = await readPackageJson(packageName);
+	const packageJson = await readDependencyPackageJson(packageName);
 	if (!packageJson) {
 		console.log(
-			`❌  "${packageName}" not found in node_modules. Please install packages first.`,
+			` ❌  "${packageName}" not found in node_modules. Please install packages first.`,
 		);
 		process.exit(1);
 	}

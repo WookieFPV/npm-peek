@@ -3,7 +3,7 @@ import path from "node:path";
 import { getNodeModulesFolders } from "../helper/getNodeModulesFolders";
 import type { PackageJson } from "./getPackageVersion";
 
-export const readPackageJson = async (
+export const readDependencyPackageJson = async (
 	packageName: string,
 ): Promise<PackageJson | undefined> => {
 	const packageJsonPaths = getNodeModulesFolders.map((folder) =>

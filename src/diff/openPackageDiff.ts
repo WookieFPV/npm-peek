@@ -1,4 +1,3 @@
-import type { CommandFlags } from "../cli/impl";
 import {
 	getUpToCompareMessage,
 	getUpToDateMessage,
@@ -13,7 +12,12 @@ export const openPackageDiff = async ({
 	packageName,
 	used,
 	wanted,
-}: CommandFlags & { packageName: string; wanted: string; used: string }) => {
+}: {
+	target: string;
+	packageName: string;
+	wanted: string;
+	used: string;
+}) => {
 	if (used === target)
 		return console.log(
 			getUpToDateMessage({ packageName: packageName, used, wanted }),

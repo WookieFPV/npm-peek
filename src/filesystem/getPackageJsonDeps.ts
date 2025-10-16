@@ -9,7 +9,7 @@ export const getPackageJsonDeps = async (): Promise<Record<string, string>> => {
 		fs.readFile(path.join(process.cwd(), "package.json"), "utf-8"),
 	);
 	if (error) {
-		console.log("❌  Unable to find package.json in current directory");
+		console.log(" ❌  Unable to find package.json in current directory");
 		process.exit(1);
 	}
 	const packageJson: PackageJson = JSON.parse(packageJsonStr);

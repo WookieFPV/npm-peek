@@ -1,4 +1,4 @@
-import { readPackageJson } from "./filesystem/readPackageJson";
+import { readDependencyPackageJson } from "./filesystem/readDependencyPackageJson";
 import { getPackageUrl } from "./getPackageUrl/getPackageUrl";
 import { getRepoType } from "./getPackageUrl/getRepoType";
 import type { UpdateInfo } from "./types/UpdateInfo";
@@ -8,10 +8,10 @@ export const printRepoLinks = async ({
 	version,
 	target,
 }: UpdateInfo): Promise<void> => {
-	const packageJson = await readPackageJson(packageName);
+	const packageJson = await readDependencyPackageJson(packageName);
 	if (!packageJson) {
 		console.error(
-			`❌  "${packageName}" not found in node_modules. Please install packages first.`,
+			` ❌  "${packageName}" not found in node_modules. Please install packages first.`,
 		);
 		return;
 	}

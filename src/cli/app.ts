@@ -1,9 +1,5 @@
 import { buildApplication, buildCommand } from "@stricli/core";
 import { description, name, version } from "../../package.json";
-import {
-	PROMPT_EMPTY,
-	parsePackageNameOrPrompt,
-} from "../parsePackageNameOrPrompt";
 
 const command = buildCommand({
 	loader: async () => import("./impl"),
@@ -12,10 +8,10 @@ const command = buildCommand({
 			kind: "tuple",
 			parameters: [
 				{
-					brief: "package name",
-					parse: parsePackageNameOrPrompt,
-					default: PROMPT_EMPTY,
-					placeholder: "example-package",
+					brief: "any npm package name to diff",
+					parse: String,
+					optional: true,
+					placeholder: "my-npm-package",
 				},
 			],
 		},
@@ -23,10 +19,9 @@ const command = buildCommand({
 			target: {
 				kind: "parsed",
 				brief:
-					"Target package version to open diff against (e.g. 1.0.0). If not provided, the latest version will be used.",
+					"Specify the target package version to compare against (e.g. 1.0.0). If omitted, you will be prompted interactively.",
 				parse: String,
-				inferEmpty: true,
-				default: "",
+				optional: true,
 			},
 		},
 		aliases: {
