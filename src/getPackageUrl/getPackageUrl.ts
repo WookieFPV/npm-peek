@@ -1,4 +1,4 @@
-import type { PackageJson } from "../packageDeps";
+import type { PackageJson } from "../filesystem/getPackageVersion";
 
 export const getPackageUrl = (repo: PackageJson["repository"]) => {
 	const rawUrl = getRepoUrl(repo);

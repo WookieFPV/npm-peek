@@ -8,7 +8,6 @@ import {
 const command = buildCommand({
 	loader: async () => import("./impl"),
 	parameters: {
-		flags: {}, // No flags but types fails if this is not defined
 		positional: {
 			kind: "tuple",
 			parameters: [
@@ -19,6 +18,19 @@ const command = buildCommand({
 					placeholder: "example-package",
 				},
 			],
+		},
+		flags: {
+			target: {
+				kind: "parsed",
+				brief:
+					"Target package version to open diff against (e.g. 1.0.0). If not provided, the latest version will be used.",
+				parse: String,
+				inferEmpty: true,
+				default: "",
+			},
+		},
+		aliases: {
+			t: "target",
 		},
 	},
 	docs: {

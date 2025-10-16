@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import { tryCatch } from "./helper/tryCatch";
-import type { PackageJson } from "./packageDeps";
+import { tryCatch } from "../helper/tryCatch";
+import type { PackageJson } from "./getPackageVersion";
 
 export const getPackageJsonDeps = async (): Promise<Record<string, string>> => {
 	const { data: packageJsonStr, error } = await tryCatch(

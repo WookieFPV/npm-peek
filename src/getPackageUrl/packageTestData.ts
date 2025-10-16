@@ -1,4 +1,4 @@
-import type { PackageJson } from "../packageDeps";
+import type { PackageJson } from "../filesystem/getPackageVersion";
 import type { RepoType } from "./getRepoType";
 
 export type PackageTestData = [

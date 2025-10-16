@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { getNodeModulesFolders } from "./helper/getNodeModulesFolders";
-import type { PackageJson } from "./packageDeps";
+import { getNodeModulesFolders } from "../helper/getNodeModulesFolders";
+import type { PackageJson } from "./getPackageVersion";
 
 export const readPackageJson = async (
 	packageName: string,

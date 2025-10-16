@@ -1,59 +1,36 @@
 # npm-peek 🔍 [![npm][npm-image]][npm-url] ![npm][npm-dl-stats]
 
-A powerful CLI tool to visualize differences between your current npm package versions and their latest releases in a browser.
-
-
-## 🎥 Showcase
-
-![Demo](assets/demo.gif)
+A CLI tool that lets you visually compare your installed npm package versions with any available release. Autocomplete helps you select a package, then pick a version to visually diff against your current one.
 
 ## 🚀 Quick Start
 
 Use npm-peek instantly with npx:
 
 ```bash
-# Interactive mode with autocompletion for your package.json dependencies
+# Interactive mode with autocompletion using your package.json
 npx npm-peek
 
-# Direct comparison mode with specific package
-npx npm-peek react
+# Direct comparison mode with specific package & version
+npx npm-peek react --target 19.1.0
 ```
 
-## 🧠 Usage Modes
+## 🎥 Showcase
 
-- **Interactive Mode:** Run without arguments to select from your project dependencies with fuzzy search
-- **Direct Mode:** Specify a package name to instantly compare with its latest version
+![Demo](assets/demo.gif)
 
 ## ✨ Key Features
 
 - **Smart Dependency Detection:** Automatically finds and lists all packages from your `package.json`
 - **Fuzzy Search:** Quickly locate packages with partial name matching
+- **Version Autocomplete:** Easily select from all available versions of a package
 - **Visual Diff Viewer:** See all changes in a clean, browser-based HTML interface
 - **One-Command Operation:** Compare versions with minimal typing
 - **Zero Configuration:** Works out-of-the-box with any npm project
 
-## 📦 Installation
-
-**Global Installation (Optional):**
-
-```bash
-npm install -g npm-peek
-# or
-yarn global add npm-peek
-# or 
-pnpm add -g npm-peek
-```
-
-Then use anywhere:
-
-```bash
-npm-peek [package-name]
-```
-
 ## 🔧 How It Works
 
-1. Reads the version of the specified package from your `package.json`
-2. Fetches the latest version of the package from the npm registry
+1. Reads `package.json` to identify dependencies and used version
+2. Prompts you to select a package and target version (with autocomplete)
 3. Generates a visual diff
 4. Opens the diff in your default browser
 

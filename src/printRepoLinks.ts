@@ -1,12 +1,12 @@
+import { readPackageJson } from "./filesystem/readPackageJson";
 import { getPackageUrl } from "./getPackageUrl/getPackageUrl";
 import { getRepoType } from "./getPackageUrl/getRepoType";
-import { readPackageJson } from "./readPackageJson";
-import type { UpdateInfo } from "./UpdateInfo";
+import type { UpdateInfo } from "./types/UpdateInfo";
 
 export const printRepoLinks = async ({
 	packageName,
 	version,
-	latest,
+	target,
 }: UpdateInfo): Promise<void> => {
 	const packageJson = await readPackageJson(packageName);
 	if (!packageJson) {
@@ -21,15 +21,15 @@ export const printRepoLinks = async ({
 
 	const type = getRepoType(url);
 	if (type === "github") {
-		console.log(`GitHub diff link: ${url}/compare/v${version}...v${latest}`);
+		console.log(`GitHub diff link: ${url}/compare/v${version}...v${target}`);
 		console.log(`GitHub Releases: ${url}/releases`);
 	} else if (type === "bitbucket") {
 		console.log(
-			`Bitbucket diff link: ${url}/compare/diff?sourceBranch=refs%2Ftags%2Fv${latest}&targetBranch=refs%2Ftags%2Fv${version}`,
+			`Bitbucket diff link: ${url}/compare/diff?sourceBranch=refs%2Ftags%2Fv${target}&targetBranch=refs%2Ftags%2Fv${version}`,
 		);
 	} else if (type === "gitlab") {
 		console.log(
-			`Bitbucket diff link: ${url}/compare/diff?sourceBranch=refs%2Ftags%2Fv${latest}&targetBranch=refs%2Ftags%2Fv${version}`,
+			`Bitbucket diff link: ${url}/compare/diff?sourceBranch=refs%2Ftags%2Fv${target}&targetBranch=refs%2Ftags%2Fv${version}`,
 		);
 	}
 };

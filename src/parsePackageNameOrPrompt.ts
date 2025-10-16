@@ -1,6 +1,6 @@
 import { search } from "@inquirer/prompts";
-import { fuzzySearch } from "./FuzzySearch";
-import { getPackageJsonDeps } from "./getPackageJsonDeps";
+import { getPackageJsonDeps } from "./filesystem/getPackageJsonDeps";
+import { fuzzySearch } from "./helper/FuzzySearch";
 import { tryCatch } from "./helper/tryCatch";
 
 export const PROMPT_EMPTY = "__PROMPT_EMPTY__";

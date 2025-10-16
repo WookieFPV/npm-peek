@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { fuzzySearch } from "../FuzzySearch";
+import { fuzzySearch } from "../helper/FuzzySearch";
 
 describe("Filter packages (fuzzySearch)", () => {
 	const packages = ["react", "react-dom", "vue", "angular", "regex-foo"];
