@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/WookieFPV/npm-peek/compare/v0.1.0...v0.1.1) (2025-10-16)
+
+
+### Bug Fixes
+
+* fix crash because of import to a typescript enum (node can't handle them) ([9ca616a](https://github.com/WookieFPV/npm-peek/commit/9ca616abec0b8db380c7d144c79c44360be167e6))
+
 ## [0.1.0](https://github.com/WookieFPV/npm-peek/compare/v0.0.13...v0.1.0) (2025-10-16)
 
 
