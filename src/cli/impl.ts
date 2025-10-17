@@ -6,11 +6,12 @@ import type { LocalContext } from "./context";
 
 export interface CommandFlags {
 	readonly target?: string;
+	readonly exp?: boolean;
 }
 
 export default async function (
 	this: LocalContext,
-	{ target: inputTarget }: CommandFlags,
+	{ target: inputTarget, exp }: CommandFlags,
 	inputPackageName?: string,
 ): Promise<void> {
 	const packageName = await promptNpmPackageName(inputPackageName);
@@ -22,5 +23,5 @@ export default async function (
 		used,
 	});
 
-	await openPackageDiff({ packageName, target, wanted, used });
+	await openPackageDiff({ packageName, target, wanted, used, exp });
 }

@@ -12,7 +12,7 @@ export const getHtmlDiffPath = async (
 ) => {
 	const htmldiffFile = path.join(
 		path.dirname(diffTxtFilePath),
-		path.basename(diffTxtFilePath).replace(".txt", ".html"),
+		path.basename(diffTxtFilePath).replace(".txt", "_exp.html"),
 	);
 	const { error } = await tryCatch(fs.access(htmldiffFile));
 	if (!error) return htmldiffFile;

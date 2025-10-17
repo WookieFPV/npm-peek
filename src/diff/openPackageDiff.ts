@@ -5,6 +5,7 @@ import {
 	getVersionString,
 } from "../outputStrings";
 import { printRepoLinks } from "../printRepoLinks";
+import { runScript } from "../runScript";
 import { getHtmlDiffPath } from "./getHtmlDiffPath";
 import { npmDiffPackage } from "./npmDiffPackage";
 
@@ -13,11 +14,13 @@ export const openPackageDiff = async ({
 	packageName,
 	used,
 	wanted,
+	exp,
 }: {
 	target: string;
 	packageName: string;
 	wanted: string;
 	used: string;
+	exp?: boolean;
 }) => {
 	if (used === target)
 		return console.log(
@@ -37,6 +40,12 @@ export const openPackageDiff = async ({
 	});
 
 	const title = `npm-peek: ${packageName} ${getVersionString({ used, wanted })} → ${target}`;
-	const htmlDiffFilePath = await getHtmlDiffPath(diffTxtFilePath, title);
-	await open(htmlDiffFilePath);
+	if (exp) {
+		const htmlDiffFilePath = await getHtmlDiffPath(diffTxtFilePath, title);
+		await open(htmlDiffFilePath);
+	} else {
+		await runScript(
+			`npx -y diff2html-cli --su open --cs light -s side -t "${title}" -i file -- ${diffTxtFilePath}`,
+		);
+	}
 };
