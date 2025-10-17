@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/WookieFPV/npm-peek/compare/v0.1.3...v0.1.4) (2025-10-17)
+
+
+### Bug Fixes
+
+* add --exp flag to use experimental html rendering (which is faster but not tested much) ([b80c3fb](https://github.com/WookieFPV/npm-peek/commit/b80c3fb41d2cdc4f76d5e78db8b29769cc7c01c3))
+
 ## [0.1.3](https://github.com/WookieFPV/npm-peek/compare/v0.1.2...v0.1.3) (2025-10-16)
 
 
