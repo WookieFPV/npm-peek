@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/WookieFPV/npm-peek/compare/v0.1.4...v0.2.0) (2025-10-29)
+
+
+### Features
+
+* add loading spinners to task that can take a few seconds ([9dfb15c](https://github.com/WookieFPV/npm-peek/commit/9dfb15c453d90c4578caf6e39607b8e3f73d030f))
+
+
+### Bug Fixes
+
+* improve how release tags are shown. Makes selection of version easier ([c8f91ef](https://github.com/WookieFPV/npm-peek/commit/c8f91efdd75cc62df868bf1e862b89d4c90704de))
+
 ## [0.1.4](https://github.com/WookieFPV/npm-peek/compare/v0.1.3...v0.1.4) (2025-10-17)
 
 
