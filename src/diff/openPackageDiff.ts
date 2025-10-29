@@ -1,12 +1,12 @@
-import open from "open";
+import { oraTimedPromise } from "../cli/oraPromise";
 import {
 	getUpToCompareMessage,
 	getUpToDateMessage,
 	getVersionString,
 } from "../outputStrings";
 import { printRepoLinks } from "../printRepoLinks";
-import { runScript } from "../runScript";
-import { getHtmlDiffPath } from "./getHtmlDiffPath";
+import { getFileNames } from "./fileName";
+import { htmlDiff } from "./getHtmlDiffPath";
 import { npmDiffPackage } from "./npmDiffPackage";
 
 export const openPackageDiff = async ({
@@ -30,22 +30,27 @@ export const openPackageDiff = async ({
 	console.log(
 		getUpToCompareMessage({ packageName: packageName, used, wanted, target }),
 	);
+	const files = getFileNames({ packageName, target, version: used });
 
-	void printRepoLinks({ packageName: packageName, target, version: used });
-
-	const diffTxtFilePath = await npmDiffPackage({
+	await printRepoLinks({
 		packageName: packageName,
 		target,
 		version: used,
+		outputPath: files.diffFile,
 	});
 
+	await oraTimedPromise(
+		npmDiffPackage({
+			packageName: packageName,
+			target,
+			version: used,
+			outputPath: files.diffFile,
+		}),
+		{ label: "Generating Diff" },
+	);
+
 	const title = `npm-peek: ${packageName} ${getVersionString({ used, wanted })} → ${target}`;
-	if (exp) {
-		const htmlDiffFilePath = await getHtmlDiffPath(diffTxtFilePath, title);
-		await open(htmlDiffFilePath);
-	} else {
-		await runScript(
-			`npx -y diff2html-cli --su open --cs light -s side -t "${title}" -i file -- ${diffTxtFilePath}`,
-		);
-	}
+	await oraTimedPromise(htmlDiff(files, title, exp), {
+		label: "Generating HTML",
+	});
 };

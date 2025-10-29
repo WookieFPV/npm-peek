@@ -2,23 +2,30 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { getOutput } from "diff2html-cli/lib/cli.js";
-import { tryCatch } from "../helper/tryCatch";
+import open from "open";
+import { cachedFileOperation } from "../filesystem/cachedFileOperation";
+import { runScript } from "../runScript";
+import type { FileOutput } from "./fileName";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export const getHtmlDiffPath = async (
-	diffTxtFilePath: string,
+export const htmlDiff = async (
+	files: FileOutput,
 	title: string,
+	exp?: boolean,
 ) => {
-	const htmldiffFile = path.join(
-		path.dirname(diffTxtFilePath),
-		path.basename(diffTxtFilePath).replace(".txt", "_exp.html"),
-	);
-	const { error } = await tryCatch(fs.access(htmldiffFile));
-	if (!error) return htmldiffFile;
+	if (exp) {
+		await cachedFileOperation({
+			outputPath: files.htmlFile,
+			createFile: () => getHtmlDiffPathBare(files, title),
+		});
+		return open(files.htmlFile);
+	}
+	return getHtmlDiffPathCli(files.diffFile, title);
+};
 
-	const diffString = await fs.readFile(diffTxtFilePath, "utf-8");
-
+export const getHtmlDiffPathBare = async (files: FileOutput, title: string) => {
+	const diffString = await fs.readFile(files.diffFile, "utf-8");
 	const fullHtml = getOutput(
 		{
 			// @ts-expect-error I am not going to import their ts enums just for this
@@ -43,7 +50,14 @@ export const getHtmlDiffPath = async (
 		},
 		diffString,
 	);
-	await fs.writeFile(htmldiffFile, fullHtml, { encoding: "utf-8" });
-
-	return htmldiffFile;
+	await fs.writeFile(files.htmlFile, fullHtml, { encoding: "utf-8" });
+	return files.htmlFile;
 };
+
+export const getHtmlDiffPathCli = async (
+	diffTxtFilePath: string,
+	title: string,
+) =>
+	runScript(
+		`npx -y diff2html-cli --su open --cs light -s side -t "${title}" -i file -- ${diffTxtFilePath}`,
+	);
