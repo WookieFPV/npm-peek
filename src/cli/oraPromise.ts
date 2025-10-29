@@ -2,13 +2,15 @@ import { performance } from "node:perf_hooks";
 import { oraPromise, type PromiseOptions } from "ora";
 import { formatTime } from "../helper/formatTime";
 
+const MIN_DURATION_FOR_TIMED_TEXT = 5000;
+
 export const getOraTexts = (
 	label: string,
 ): PromiseOptions<TimedResponse<unknown>> => ({
 	text: label,
 	failText: (error: Error) => `${label} failed with error: ${error.message}`,
 	successText: (data) => {
-		if (data.duration > 1000)
+		if (data.duration > MIN_DURATION_FOR_TIMED_TEXT)
 			return `${label} [took ${formatTime(data.duration)}]`;
 		return label;
 	},
