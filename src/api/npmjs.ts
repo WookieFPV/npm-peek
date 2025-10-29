@@ -27,9 +27,17 @@ export const fetchPackageVersions = async (
 	const data = (await response.json()) as PkgInfo;
 
 	const distTags = Object.entries(data["dist-tags"]);
-	const versions = Object.entries(data.versions)
-		.map<VersionItem>(([version, _meta]) => [version, version])
-		.reverse();
 
-	return [...distTags, ...versions];
+	const getVersionLabel = (version: string): string => {
+		const tags = distTags
+			.filter(([_label, ver]) => ver === version)
+			.map(([label, _ver]) => `[${label}]`)
+			.join(", ");
+		if (tags.length === 0) return version;
+		return `${version} ${tags}`;
+	};
+
+	return Object.entries(data.versions)
+		.map<VersionItem>(([version, _meta]) => [getVersionLabel(version), version])
+		.reverse();
 };
