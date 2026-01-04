@@ -8,7 +8,7 @@
         "@inquirer/prompts": "7.10.1",
         "@rnx-kit/tools-workspaces": "0.2.3",
         "@stricli/core": "1.2.4",
-        "diff2html": "3.4.52",
+        "diff2html": "3.4.53",
         "diff2html-cli": "5.2.15",
         "fast-fuzzy": "1.12.0",
         "open": "10.2.0",
@@ -146,6 +146,8 @@
 
     "@pkgjs/parseargs": ["@pkgjs/parseargs@0.11.0", "", {}, "sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg=="],
 
+    "@profoundlogic/hogan": ["@profoundlogic/hogan@3.0.4", "", { "dependencies": { "nopt": "1.0.10" }, "bin": { "hulk": "bin/hulk" } }, "sha512-pmNVGuooS30Mm7YbZd5T7E5zYVO6D5Ct91sn4T39mUvMUc3sCGridcnhAufL1/Bz2QzAtzEn0agNrdk3+5yWzw=="],
+
     "@rnx-kit/tools-workspaces": ["@rnx-kit/tools-workspaces@0.2.3", "", { "dependencies": { "fast-glob": "^3.2.7", "find-up": "^5.0.0", "micromatch": "^4.0.0", "read-yaml-file": "^2.1.0", "strip-json-comments": "^3.1.1" } }, "sha512-nJ1aRBqUoEPYVdc9cYZtpR6k5F+DcdtLWdlSAGd9f1HU2tqvDpRJhOId9uY3T57fC+YVtPijlp9/55gNGsaiJw=="],
 
     "@rollup/rollup-android-arm-eabi": ["@rollup/rollup-android-arm-eabi@4.40.0", "", { "os": "android", "cpu": "arm" }, "sha512-+Fbls/diZ0RDerhE8kyC6hjADCXA1K4yVNlH0EYfd2XjyH0UGgzaQ8MlT0pCXAThfxv3QUAczHaL+qSv1E4/Cg=="],
@@ -262,7 +264,7 @@
 
     "diff": ["diff@7.0.0", "", {}, "sha512-PJWHUb1RFevKCwaFA9RlG5tCd+FO5iRh9A8HEtkmBH2Li03iJriB6m6JIN4rGz3K3JLawI7/veA1xzRKP6ISBw=="],
 
-    "diff2html": ["diff2html@3.4.52", "", { "dependencies": { "diff": "^7.0.0", "hogan.js": "3.0.2" }, "optionalDependencies": { "highlight.js": "11.9.0" } }, "sha512-qhMg8/I3sZ4zm/6R/Kh0xd6qG6Vm86w6M+C9W+DuH1V8ACz+1cgEC8/k0ucjv6AGqZWzHm/8G1gh7IlrUqCMhg=="],
+    "diff2html": ["diff2html@3.4.53", "", { "dependencies": { "@profoundlogic/hogan": "^3.0.4", "diff": "^7.0.0" }, "optionalDependencies": { "highlight.js": "11.9.0" } }, "sha512-GyspaEqmAf/SNoX9Xw1T4UlJYR11BGqlJSuZSU9A4zxtWZhTQXQk509PPMqTItOIEumL6b1c+oFGBrvmr5oo6Q=="],
 
     "diff2html-cli": ["diff2html-cli@5.2.15", "", { "dependencies": { "clipboardy": "^4.0.0", "diff2html": "^3.4.47", "node-fetch": "^3.3.2", "open": "^10.0.3", "yargs": "^17.6.0" }, "bin": { "diff2html": "bin/diff2html.js" } }, "sha512-w1WJSzyiXDSVsz6cYPE7eu0f3KptN1fT2s/i0ENavaB9aT1Fj/3zjH00mYB14JiPdj3X0hl4PsrtBNjgGKdpkA=="],
 
@@ -561,6 +563,8 @@
     "cliui/strip-ansi": ["strip-ansi@6.0.1", "", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
 
     "cliui/wrap-ansi": ["wrap-ansi@7.0.0", "", { "dependencies": { "ansi-styles": "^4.0.0", "string-width": "^4.1.0", "strip-ansi": "^6.0.0" } }, "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q=="],
+
+    "diff2html-cli/diff2html": ["diff2html@3.4.52", "", { "dependencies": { "diff": "^7.0.0", "hogan.js": "3.0.2" }, "optionalDependencies": { "highlight.js": "11.9.0" } }, "sha512-qhMg8/I3sZ4zm/6R/Kh0xd6qG6Vm86w6M+C9W+DuH1V8ACz+1cgEC8/k0ucjv6AGqZWzHm/8G1gh7IlrUqCMhg=="],
 
     "micromatch/picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
 
