@@ -8,7 +8,7 @@
         "@inquirer/prompts": "7.10.1",
         "@rnx-kit/tools-workspaces": "0.2.3",
         "@stricli/core": "1.2.5",
-        "diff2html": "3.4.53",
+        "diff2html": "3.4.55",
         "diff2html-cli": "5.2.15",
         "fast-fuzzy": "1.12.0",
         "open": "10.2.0",
@@ -264,7 +264,7 @@
 
     "diff": ["diff@7.0.0", "", {}, "sha512-PJWHUb1RFevKCwaFA9RlG5tCd+FO5iRh9A8HEtkmBH2Li03iJriB6m6JIN4rGz3K3JLawI7/veA1xzRKP6ISBw=="],
 
-    "diff2html": ["diff2html@3.4.53", "", { "dependencies": { "@profoundlogic/hogan": "^3.0.4", "diff": "^7.0.0" }, "optionalDependencies": { "highlight.js": "11.9.0" } }, "sha512-GyspaEqmAf/SNoX9Xw1T4UlJYR11BGqlJSuZSU9A4zxtWZhTQXQk509PPMqTItOIEumL6b1c+oFGBrvmr5oo6Q=="],
+    "diff2html": ["diff2html@3.4.55", "", { "dependencies": { "@profoundlogic/hogan": "^3.0.4", "diff": "^7.0.0" }, "optionalDependencies": { "highlight.js": "11.9.0" } }, "sha512-v7vi4Gluu7VtMNiHxZWyfnzRItkNPo1mxBzf2VnzZZccdN3gcl+4ZG8WBA7p4AkhPeeBcDItu9JF91o2HZkhlQ=="],
 
     "diff2html-cli": ["diff2html-cli@5.2.15", "", { "dependencies": { "clipboardy": "^4.0.0", "diff2html": "^3.4.47", "node-fetch": "^3.3.2", "open": "^10.0.3", "yargs": "^17.6.0" }, "bin": { "diff2html": "bin/diff2html.js" } }, "sha512-w1WJSzyiXDSVsz6cYPE7eu0f3KptN1fT2s/i0ENavaB9aT1Fj/3zjH00mYB14JiPdj3X0hl4PsrtBNjgGKdpkA=="],
 
