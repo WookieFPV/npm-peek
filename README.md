@@ -34,6 +34,18 @@ npx npm-peek react --target 19.1.0
 3. Generates a visual diff
 4. Opens the diff in your default browser
 
+## 📦 Releases
+
+This repo uses Changesets.
+
+1. For any user-facing package change, run `bun run changeset` and commit the generated file in `.changeset/`.
+2. When changesets reach `main`, GitHub Actions opens or updates a release PR with the version bump and generated `CHANGELOG.md`.
+3. Edit that PR's changelog however you want.
+4. Merge the release PR.
+5. The `release` workflow publishes to npm with Trusted Publisher.
+
+That keeps changelog generation automatic, but still makes the final changelog a normal reviewed git diff before publish.
+
 [npm-image]: https://img.shields.io/npm/v/npm-peek
 [npm-url]: https://www.npmjs.com/package/npm-peek
 [npm-dl-stats]: https://img.shields.io/npm/dm/npm-peek
