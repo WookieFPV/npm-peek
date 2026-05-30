@@ -1,6 +1,6 @@
 {
 	"name": "npm-peek",
-	"description": "Review npm dependency upgrades with interactive version selection and browser-based HTML diffs",
+	"description": "Diff installed npm dependencies against published versions in a browser-friendly HTML view.",
 	"license": "MIT",
 	"type": "module",
 	"version": "0.2.1",
@@ -13,13 +13,18 @@
 	},
 	"keywords": [
 		"npm",
-		"dependency",
+		"dependencies",
 		"upgrade",
 		"update",
 		"diff",
-		"version",
+		"review",
+		"inspect",
 		"cli"
 	],
+	"author": {
+		"name": "WookieFPV (Lukas Müller)",
+		"url": "https://github.com/WookieFPV"
+	},
 	"main": "dist/cli.js",
 	"repository": {
 		"type": "git",
