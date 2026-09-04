@@ -8,7 +8,8 @@ export const getOraTexts = (
 	label: string,
 ): PromiseOptions<TimedResponse<unknown>> => ({
 	text: label,
-	failText: (error: Error) => `${label} failed with error: ${error.message}`,
+	failText: (error) =>
+		`${label} failed with error: ${error instanceof Error ? error.message : String(error)}`,
 	successText: (data) => {
 		if (data.duration > MIN_DURATION_FOR_TIMED_TEXT)
 			return `${label} [took ${formatTime(data.duration)}]`;
