@@ -54,9 +54,9 @@ jobs:
       - name: Create release PR or publish
         uses: changesets/action@v2.1.2
         with:
-          commit: "chore: release"
-          title: "chore: release"
-          version: bun run version-packages
-          publish: bun run release
+          commit-message: "chore: release"
+          pr-title: "chore: release"
+          version-script: bun run version-packages
+          publish-script: bun run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
