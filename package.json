@@ -59,7 +59,7 @@
 		"ora": "9.4.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.6.4",
+		"@biomejs/biome": "2.6.5",
 		"@changesets/cli": "3.0.3",
 		"@types/bun": "1.4.4",
 		"lefthook": "2.2.2",
